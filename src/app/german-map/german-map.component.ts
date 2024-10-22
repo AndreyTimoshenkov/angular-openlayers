@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { MapOlComponent, MapOlService, IMapControls } from '@dlr-eoc/map-ol';
-import { LayerControlComponent } from '@dlr-eoc/layer-control';
+import { LayersService } from '@dlr-eoc/services-layers';
 import { MapStateService } from '@dlr-eoc/services-map-state';
+import { IMapControls, MapOlComponent } from '@dlr-eoc/map-ol';
 
 import { OsmTileLayer, EocLitemap, BlueMarbleTile } from '@dlr-eoc/base-layers-raster';
-import { LayersService } from '@dlr-eoc/services-layers';
+import { Component, OnInit } from '@angular/core';
+import { LayerControlComponent } from '@dlr-eoc/layer-control';
 
 @Component({
   selector: 'app-german-map',
@@ -12,7 +12,6 @@ import { LayersService } from '@dlr-eoc/services-layers';
   imports: [
     MapOlComponent,
     LayerControlComponent
-
   ],
   templateUrl: './german-map.component.html',
   styleUrl: './german-map.component.css'
@@ -41,10 +40,10 @@ controls: IMapControls = {
   addBaselayers() {
     const layers = [
       new OsmTileLayer({
-        visible: false
+        visible: true
       }),
       new EocLitemap({
-        visible: true
+        visible: false
       }),
       new BlueMarbleTile({
         visible: false

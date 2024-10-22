@@ -1,0 +1,21 @@
+<nol-map
+  [nolHeight]="'900px'"
+  [nolView]="view"
+>
+  <nol-tile-layer>
+    <nol-osm-source></nol-osm-source>
+  </nol-tile-layer>
+
+  <!-- <nol-vector-layer>
+    <nol-vector-source></nol-vector-source>
+  </nol-vector-layer> -->
+
+  <nol-vector-layer
+    [nolBackground]="'#1a2b39'"
+    [nolStyle]="{
+      'fill-color': ['string', ['get', 'COLOR'], '#eee'],
+    }"
+  >
+    <!-- <nol-vector-source [nolFormat]="format" [nolUrl]="url | async"></nol-vector-source> -->
+  </nol-vector-layer>
+</nol-map>
